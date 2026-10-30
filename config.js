@@ -4,22 +4,22 @@
 // ─────────────────────────────────────────────────────────────────────────────
 
 const USER_CONFIG = {
-  name:       "Your Name",
-  initials:   "YN",
-  role:       "PhD Candidate",
-  university: "Your University",
-  email:      "your.email@university.edu",
+  name:       "Songlin Yang",
+  initials:   "YSL",
+  role:       "PhD",
+  university: "Nanjing Normal University",
+  email:      "slyang@njnu.edu.cn",
   bio:        "Exploring the frontiers of your research area, machine learning, and artificial intelligence. Building intelligent systems that advance scientific discovery.",
   photo:      "",   // optional: path to your photo, e.g. "assets/photo.jpg"
 
   stats: [
-    { value: "10+",  label: "Publications" },
-    { value: "200+", label: "Citations" },
-    { value: "5+",   label: "Projects" },
+    { value: "30+",  label: "Publications" },
+    { value: "300+", label: "Citations" },
+    { value: "2+",   label: "Projects" },
   ],
 
   links: {
-    scholar: "https://scholar.google.com/",
+    scholar: "https://scholar.google.com/citations?user=mjJLnu0AAAAJ&hl=zh-CN",
     github:  "https://github.com/",
     twitter: "",          // leave empty to hide
     cv:      "assets/cv.pdf",
