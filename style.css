@@ -1506,6 +1506,23 @@ a:hover {
     margin: 0;
 }
 
+/* 强制缩小头像 */
+.hero .hero-image .image-frame {
+    width: 260px !important;
+    height: 260px !important;
+    min-width: 260px;
+    min-height: 260px;
+    padding: 0 !important;
+    box-sizing: border-box;
+}
+
+.hero .hero-image .profile-photo {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover;
+}
+
+
 /* ---- Skip Link ---- */
 .skip-link { position: absolute; top: -40px; left: 0; background: var(--accent-primary); color: #fff; padding: 8px 16px; z-index: 9999; font-size: 0.875rem; transition: top 0.2s; }
 .skip-link:focus { top: 0; }
