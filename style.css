@@ -1480,7 +1480,31 @@ a:hover {
     object-position: center top;
     border-radius: 50%;
 }
+/* 头像外框 */
+.image-frame {
+    width: 350px;
+    height: 350px;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
 
+/* 头像图片 */
+.profile-photo {
+    display: block;
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    object-fit: cover;
+    object-position: center center;
+    border-radius: 50%;
+    margin: 0;
+}
 
 /* ---- Skip Link ---- */
 .skip-link { position: absolute; top: -40px; left: 0; background: var(--accent-primary); color: #fff; padding: 8px 16px; z-index: 9999; font-size: 0.875rem; transition: top 0.2s; }
