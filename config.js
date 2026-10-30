@@ -9,7 +9,7 @@ const USER_CONFIG = {
   role:       "PhD",
   university: "Nanjing Normal University",
   email:      "slyang@njnu.edu.cn",
-  bio:        "Exploring the frontiers of your research area, machine learning, and artificial intelligence. Building intelligent systems that advance scientific discovery.",
+  bio:        "I am a Lecturer at the College of Computer and Electronic Information, Nanjing Normal University, China. My research interests include evanescent-wave illumination microscopy and microsphere-assisted super-resolution imaging. I received my B.S. degree from Henan Normal University in 2016, my M.S. degree from Nanjing Normal University in 2019, and my Ph.D. degree from Southeast University in 2023. My research focuses on developing advanced optical microscopy techniques for label-free imaging and resolution enhancement.",
   photo:      "",   // optional: path to your photo, e.g. "assets/photo.jpg"
 
   stats: [
