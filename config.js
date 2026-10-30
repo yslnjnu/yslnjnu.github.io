@@ -9,7 +9,12 @@ const USER_CONFIG = {
   role:       "Lecturer",
   university: "Nanjing Normal University",
   email:      "slyang@njnu.edu.cn",
-  bio:        "at the College of Computer and Electronic Information, Nanjing Normal University, China. My research interests include evanescent-wave illumination microscopy and microsphere-assisted super-resolution imaging. I received my B.S. degree from Henan Normal University in 2016, my M.S. degree from Nanjing Normal University in 2019, and my Ph.D. degree from Southeast University in 2023. My research focuses on developing advanced optical microscopy techniques for label-free imaging and resolution enhancement南京市大学jiu.",
+  bio:        "I am a Lecturer and Master's Supervisor at Nanjing Normal University, China. I received my Ph.D. in Engineering from Southeast University in 2023. My research focuses on super-resolution optical imaging, evanescent-wave illumination microscopy, and computational imaging.杨松林，南京师范大学计算机与电子信息学院讲师、硕士生导师，2023年获东南大学工学博士学位。主要从事倏逝波照明显微成像、微球辅助超分辨成像及计算成像等方面的研究。在 Applied Physics Letters、Optics Letters、Optics Express 等期刊发表 SCI 论文 30 余篇，获授权发明专利 1 项。
+
+联系方式：slyang@njnu.edu.cn；QQ：528872735。",
+
+
+  
   photo:      "",   // optional: path to your photo, e.g. "assets/photo.jpg"
 
   stats: [
