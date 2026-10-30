@@ -10,6 +10,9 @@ const USER_CONFIG = {
   university: "Nanjing Normal University",
   email:      "slyang@njnu.edu.cn",
   bio:        "I am a Lecturer at the College of Computer and Electronic Information, Nanjing Normal University, China. My research interests include evanescent-wave illumination microscopy and microsphere-assisted super-resolution imaging. I received my B.S. degree from Henan Normal University in 2016, my M.S. degree from Nanjing Normal University in 2019, and my Ph.D. degree from Southeast University in 2023. My research focuses on developing advanced optical microscopy techniques for label-free imaging and resolution enhancement.",
+  杨松林，男，讲师，硕导，2023年获得东南大学工学博士学位，主要从事超分辨光学成像和计算成像等方面的研究，在Applied Physics Letters，Optics Letters和Optics Express等期刊上发表SCI论文30余篇，授权发明专利1项。
+
+     联系方式：slyang@njnu.edu.cn   QQ:528872735
   photo:      "",   // optional: path to your photo, e.g. "assets/photo.jpg"
 
   stats: [
