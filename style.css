@@ -1470,6 +1470,18 @@ a:hover {
 /* ---- Focus Styles ---- */
 :focus-visible { outline: 2px solid var(--accent-primary); outline-offset: 3px; border-radius: 2px; }
 
+
+/* Profile Photo */
+.profile-photo {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: 50%;
+}
+
+
 /* ---- Skip Link ---- */
 .skip-link { position: absolute; top: -40px; left: 0; background: var(--accent-primary); color: #fff; padding: 8px 16px; z-index: 9999; font-size: 0.875rem; transition: top 0.2s; }
 .skip-link:focus { top: 0; }
