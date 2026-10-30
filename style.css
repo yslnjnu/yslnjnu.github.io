@@ -1482,8 +1482,8 @@ a:hover {
 }
 /* 头像外框 */
 .image-frame {
-    width: 350px;
-    height: 350px;
+    width: 250px;
+    height: 250px;
     padding: 0;
     box-sizing: border-box;
     overflow: hidden;
