@@ -1524,16 +1524,7 @@ a:hover {
     object-fit: cover;
 }
 
-/* 头像向下移动 */
-#about .hero-image {
-    margin-top: 60px;
-}
-
 
 /* ---- Skip Link ---- */
 .skip-link { position: absolute; top: -40px; left: 0; background: var(--accent-primary); color: #fff; padding: 8px 16px; z-index: 9999; font-size: 0.875rem; transition: top 0.2s; }
 .skip-link:focus { top: 0; }
-
-
-
-
