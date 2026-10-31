@@ -1707,55 +1707,6 @@ a:hover {
     transform: scale(1.05);
 }
 
-/* Full-screen preview */
-.student-image-modal {
-    display: none;
-    position: fixed;
-    inset: 0;
-    z-index: 9999;
-
-    align-items: center;
-    justify-content: center;
-
-    padding: 24px;
-    background: rgba(0, 0, 0, 0.82);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-}
-
-.student-image-modal.active {
-    display: flex;
-}
-
-.student-image-modal > img {
-    display: block;
-    max-width: min(90vw, 800px);
-    max-height: 85vh;
-    width: auto;
-    height: auto;
-    object-fit: contain;
-
-    border-radius: var(--radius-lg);
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
-    cursor: zoom-out;
-}
-
-.student-image-close {
-    position: absolute;
-    top: 20px;
-    right: 28px;
-
-    border: none;
-    background: transparent;
-    color: white;
-    font-size: 40px;
-    line-height: 1;
-    cursor: pointer;
-}
-
-.student-image-close:hover {
-    opacity: 0.7;
-}
 
 /* 学生头像放大预览 */
 #student-image-modal {
@@ -1806,3 +1757,56 @@ a:hover {
 .student-avatar img {
     cursor: zoom-in;
 }
+
+/* Student avatar click-to-enlarge */
+.student-avatar img {
+    cursor: zoom-in;
+    transition: transform 0.25s ease;
+}
+
+.student-avatar img:hover {
+    transform: scale(1.05);
+}
+
+/* Full-screen preview */
+#student-image-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+#student-image-modal.active {
+    display: flex;
+}
+
+#student-image-large {
+    display: block;
+    max-width: 90vw;
+    max-height: 85vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 12px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+#student-image-modal .student-image-close {
+    position: absolute;
+    top: 20px;
+    right: 28px;
+    z-index: 1;
+    border: none;
+    background: transparent;
+    color: white;
+    font-size: 40px;
+    line-height: 1;
+    cursor: pointer;
+}
+
