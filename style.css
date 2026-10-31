@@ -1643,3 +1643,13 @@ a:hover {
         font-size: 0.875rem;
     }
 }
+
+
+/* 通讯作者星号 */
+.corresponding-star {
+    color: var(--accent-primary);
+    font-size: 0.75em;
+    font-weight: 700;
+    vertical-align: super;
+    margin-left: 2px;
+}
