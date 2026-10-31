@@ -1599,3 +1599,43 @@ a:hover {
     margin-top: 0;
 }
 
+/* 头像外框：固定为正方形 */
+.hero-image .image-frame {
+    width: 320px;
+    height: 320px;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+/* 图片填满圆形区域，不拉伸 */
+.hero-image .profile-photo {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+}
+
+@media (max-width: 768px) {
+    #about {
+        padding-top: 110px;
+    }
+
+    .hero-content {
+        flex-direction: column;
+    }
+
+    .hero-image {
+        flex: none;
+        width: 260px;
+        margin: 24px auto 0;
+    }
+
+    .hero-image .image-frame {
+        width: 260px;
+        height: 260px;
+    }
+}
+
