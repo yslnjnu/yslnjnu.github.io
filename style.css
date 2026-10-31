@@ -1697,7 +1697,12 @@ a:hover {
     }
 }
 
-/* Student avatar click-to-enlarge */
+
+/* ========================================
+   Students - Click-to-Enlarge Preview
+   ======================================== */
+
+/* 学生头像鼠标样式 */
 .student-avatar img {
     cursor: zoom-in;
     transition: transform 0.25s ease;
@@ -1707,8 +1712,7 @@ a:hover {
     transform: scale(1.05);
 }
 
-
-/* 学生头像放大预览 */
+/* 全屏预览背景 */
 #student-image-modal {
     display: none;
     position: fixed;
@@ -1722,7 +1726,7 @@ a:hover {
     -webkit-backdrop-filter: blur(8px);
 }
 
-/* 添加 active 后显示弹窗 */
+/* 添加 active 类后显示弹窗 */
 #student-image-modal.active {
     display: flex;
 }
@@ -1752,61 +1756,3 @@ a:hover {
     line-height: 1;
     cursor: pointer;
 }
-
-/* 学生头像显示放大光标 */
-.student-avatar img {
-    cursor: zoom-in;
-}
-
-/* Student avatar click-to-enlarge */
-.student-avatar img {
-    cursor: zoom-in;
-    transition: transform 0.25s ease;
-}
-
-.student-avatar img:hover {
-    transform: scale(1.05);
-}
-
-/* Full-screen preview */
-#student-image-modal {
-    display: none;
-    position: fixed;
-    inset: 0;
-    z-index: 99999;
-    align-items: center;
-    justify-content: center;
-    padding: 24px;
-    background: rgba(0, 0, 0, 0.85);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-}
-
-#student-image-modal.active {
-    display: flex;
-}
-
-#student-image-large {
-    display: block;
-    max-width: 90vw;
-    max-height: 85vh;
-    width: auto;
-    height: auto;
-    object-fit: contain;
-    border-radius: 12px;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
-}
-
-#student-image-modal .student-image-close {
-    position: absolute;
-    top: 20px;
-    right: 28px;
-    z-index: 1;
-    border: none;
-    background: transparent;
-    color: white;
-    font-size: 40px;
-    line-height: 1;
-    cursor: pointer;
-}
-
