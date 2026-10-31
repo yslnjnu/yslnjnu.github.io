@@ -518,65 +518,76 @@
 </section>
 
 
+
 <!-- Students Section -->
 <section id="students" class="section">
     <div class="section-container">
         <h2 class="section-title">
             <span class="title-icon">//</span> Students
         </h2>
-    
-  <div class="students-grid">
 
-    <div class="student-card">
-        <div class="student-info">
-            <h3 class="student-name">Student Name 1</h3>
-            <p class="student-degree">Master's Student</p>
-            <p class="student-year">2026 Cohort</p>
-        </div>
-        <div class="student-avatar">
-            <img src="assets/images/students/prof_pic.jpg"
-                 alt="Student Name 1">
+        <div class="students-grid">
+
+            <div class="student-card">
+                <div class="student-info">
+                    <h3 class="student-name">Student Name 1</h3>
+                    <p class="student-degree">Master's Student</p>
+                    <p class="student-year">2026 Cohort</p>
+                </div>
+                <div class="student-avatar">
+                    <img src="assets/images/students/student1.jpg"
+                         alt="Student Name 1"
+                         onclick="openStudentImage(this)"
+                         title="Click to enlarge">
+                </div>
+            </div>
+
+            <div class="student-card">
+                <div class="student-info">
+                    <h3 class="student-name">Student Name 2</h3>
+                    <p class="student-degree">Master's Student</p>
+                    <p class="student-year">2025 Cohort</p>
+                </div>
+                <div class="student-avatar">
+                    <img src="assets/images/students/student2.jpg"
+                         alt="Student Name 2"
+                         onclick="openStudentImage(this)"
+                         title="Click to enlarge">
+                </div>
+            </div>
+
+            <div class="student-card">
+                <div class="student-info">
+                    <h3 class="student-name">Student Name 3</h3>
+                    <p class="student-degree">Master's Student</p>
+                    <p class="student-year">2025 Cohort</p>
+                </div>
+                <div class="student-avatar">
+                    <img src="assets/images/students/student3.jpg"
+                         alt="Student Name 3"
+                         onclick="openStudentImage(this)"
+                         title="Click to enlarge">
+                </div>
+            </div>
+
+            <div class="student-card">
+                <div class="student-info">
+                    <h3 class="student-name">Student Name 4</h3>
+                    <p class="student-degree">Master's Student</p>
+                    <p class="student-year">2024 Cohort</p>
+                </div>
+                <div class="student-avatar">
+                    <img src="assets/images/students/student4.jpg"
+                         alt="Student Name 4"
+                         onclick="openStudentImage(this)"
+                         title="Click to enlarge">
+                </div>
+            </div>
+
         </div>
     </div>
-
-    <div class="student-card">
-        <div class="student-info">
-            <h3 class="student-name">Student Name 2</h3>
-            <p class="student-degree">Master's Student</p>
-            <p class="student-year">2025 Cohort</p>
-        </div>
-        <div class="student-avatar">
-            <img src="assets/images/students/student2.jpg"
-                 alt="Student Name 2">
-        </div>
-    </div>
-
-    <div class="student-card">
-        <div class="student-info">
-            <h3 class="student-name">Student Name 3</h3>
-            <p class="student-degree">Master's Student</p>
-            <p class="student-year">2025 Cohort</p>
-        </div>
-        <div class="student-avatar">
-            <img src="assets/images/students/student3.jpg"
-                 alt="Student Name 3">
-        </div>
-    </div>
-
-    <div class="student-card">
-        <div class="student-info">
-            <h3 class="student-name">Student Name 4</h3>
-            <p class="student-degree">Master's Student</p>
-            <p class="student-year">2024 Cohort</p>
-        </div>
-        <div class="student-avatar">
-            <img src="assets/images/students/student4.jpg"
-                 alt="Student Name 4">
-        </div>
-    </div>
-
-</div>
 </section>
+
    
     <!-- Footer -->
     <footer class="footer">
@@ -585,6 +596,24 @@
         </div>
     </footer>
 
+
+<!-- Student Image Preview -->
+<div id="student-image-modal"
+     class="student-image-modal"
+     onclick="closeStudentImage()">
+
+    <button type="button"
+            class="student-image-close"
+            onclick="closeStudentImage(event)"
+            aria-label="Close image">&times;</button>
+
+    <img id="student-image-large"
+         src=""
+         alt="Enlarged student portrait"
+         onclick="event.stopPropagation()">
+</div>
+
+    
     <script src="config.js"></script>
     <script src="script.js"></script>
 </body>
