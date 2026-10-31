@@ -1644,11 +1644,10 @@ a:hover {
     }
 }
 
-/* 通讯作者标记 */
 .corresponding-star {
-    color: var(--accent-primary);
-    font-size: 1.2em;
-    font-weight: 800;
+    color: inherit;
+    font-size: 1em;
+    font-weight: inherit;
     vertical-align: baseline;
     margin-left: 2px;
 }
