@@ -1756,3 +1756,53 @@ a:hover {
 .student-image-close:hover {
     opacity: 0.7;
 }
+
+/* 学生头像放大预览 */
+#student-image-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+/* 添加 active 后显示弹窗 */
+#student-image-modal.active {
+    display: flex;
+}
+
+/* 放大后的图片 */
+#student-image-large {
+    display: block;
+    max-width: 90vw;
+    max-height: 85vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 12px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+/* 关闭按钮 */
+#student-image-modal .student-image-close {
+    position: absolute;
+    top: 20px;
+    right: 28px;
+    z-index: 1;
+    border: none;
+    background: transparent;
+    color: white;
+    font-size: 40px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+/* 学生头像显示放大光标 */
+.student-avatar img {
+    cursor: zoom-in;
+}
