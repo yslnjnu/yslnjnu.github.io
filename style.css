@@ -1644,13 +1644,11 @@ a:hover {
     }
 }
 
-
-/* 通讯作者星号 */
+/* 通讯作者标记 */
 .corresponding-star {
     color: var(--accent-primary);
-    font-size: 1.1em;
-    font-weight: 700;
-    vertical-align: super;
+    font-size: 1.2em;
+    font-weight: 800;
+    vertical-align: baseline;
     margin-left: 2px;
-    line-height: 0;
 }
