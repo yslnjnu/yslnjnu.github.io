@@ -1536,119 +1536,110 @@ a:hover {
 .skip-link:focus { top: 0; }
 
 
-
-
 /* ========================================
-   Mobile Fix - 手机端宽度修复
-   不影响电脑端和其他模块
+   修复手机端首页溢出
    ======================================== */
 
 @media screen and (max-width: 768px) {
 
-    /* 防止页面出现横向溢出 */
-    html,
-    body {
-        width: 100%;
+    /* 统一盒模型，避免 padding 增加实际宽度 */
+    #about,
+    .hero,
+    .hero-content,
+    .hero-text,
+    .hero-image,
+    .hero-stats,
+    .hero-cta {
+        box-sizing: border-box;
+        min-width: 0;
         max-width: 100%;
+    }
+
+    /* 首页不允许子元素撑宽视口 */
+    .hero {
+        width: 100%;
+        padding: 110px 16px 48px;
         overflow-x: clip;
     }
 
-    /* 个人介绍区域：限制宽度 */
-    #about,
-    .hero {
-        width: 100%;
-        max-width: 100%;
-        min-width: 0;
-        box-sizing: border-box;
-    }
-
-    .hero {
-        padding-left: 16px;
-        padding-right: 16px;
-    }
-
+    /* 强制单列布局 */
     .hero-content {
         width: 100%;
-        max-width: 100%;
-        min-width: 0;
         grid-template-columns: minmax(0, 1fr);
         gap: 24px;
-        box-sizing: border-box;
     }
 
-    /* 文字区域不能超出屏幕 */
-    .hero-text {
-        width: 100%;
-        max-width: 100%;
-        min-width: 0;
-        box-sizing: border-box;
-    }
-
-    .hero-name,
-    .hero-title,
-    .hero-description {
-        max-width: 100%;
-        overflow-wrap: anywhere;
-        word-break: normal;
-    }
-
-    .hero-description {
-        text-align: left;
-    }
-
-    /* 头像区域：覆盖原有 260px 强制设置 */
+    /* 头像：取消固定最小宽度 */
     .hero .hero-image {
         width: 100%;
-        max-width: 100%;
-        min-width: 0;
+        justify-content: center;
         margin-top: 0;
-        box-sizing: border-box;
     }
 
     .hero .hero-image .image-frame {
-        width: 200px !important;
-        height: 200px !important;
-        min-width: 0;
-        min-height: 0;
-        max-width: 100%;
+        width: min(200px, 70vw) !important;
+        height: min(200px, 70vw) !important;
+        min-width: 0 !important;
+        min-height: 0 !important;
         flex-shrink: 1;
     }
 
-    /* 防止统计数据撑宽页面 */
-    .hero-stats {
+    /* 简介文字 */
+    .hero-description {
         width: 100%;
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        text-align: left;
+    }
+
+    /* 统计区域 */
+    .hero-stats {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        gap: 12px;
+        width: 100%;
+        padding: 16px 10px;
+    }
+
+    .hero-stats > * {
+        min-width: 0;
+        max-width: 100%;
+        overflow-wrap: anywhere;
+    }
+
+    /* 按钮区域 */
+    .hero-cta {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+        width: 100%;
+    }
+
+    .hero-cta .btn {
         max-width: 100%;
         min-width: 0;
-        box-sizing: border-box;
-    }
-
-    /* 按钮允许换行 */
-    .hero-cta {
-        max-width: 100%;
-        flex-wrap: wrap;
-    }
-
-    .btn {
-        max-width: 100%;
-        box-sizing: border-box;
+        white-space: normal;
+        overflow-wrap: anywhere;
+        text-align: center;
     }
 }
 
-/* 小屏手机进一步缩小头像和左右边距 */
+/* 窄屏手机 */
 @media screen and (max-width: 400px) {
-
     .hero {
         padding-left: 12px;
         padding-right: 12px;
     }
 
-    .hero-name {
-        font-size: 1.75rem;
+    .hero-stats {
+        gap: 8px;
     }
 
-    .hero .hero-image .image-frame {
-        width: 170px !important;
-        height: 170px !important;
+    .hero-cta .btn {
+        padding: 10px 16px;
+        font-size: 0.875rem;
     }
 }
-
