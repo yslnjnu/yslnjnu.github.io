@@ -1604,22 +1604,26 @@ a:hover {
 
 /* ========================================
    Students - Glass Cards
+   三列布局：头像在上，文字在下
    ======================================== */
 
 .students-grid {
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: var(--space-md);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--space-lg);
 }
 
+/* 学生卡片 */
 .student-card {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    gap: 12px;
+    justify-content: flex-start;
+    gap: 0;
 
-    padding: var(--space-lg);
+    padding: 24px 16px;
     min-width: 0;
+    text-align: center;
 
     background: var(--glass-bg);
     backdrop-filter: var(--glass-blur);
@@ -1627,52 +1631,25 @@ a:hover {
     border: var(--glass-border);
     border-radius: var(--radius-lg);
 
-    transition: all var(--transition-fast);
+    transition: transform var(--transition-fast),
+                background var(--transition-fast),
+                box-shadow var(--transition-fast);
 }
 
 .student-card:hover {
     background: var(--bg-card);
     box-shadow: var(--shadow-md);
+    transform: translateY(-4px);
 }
 
-/* 左侧学生信息 */
-.student-info {
-    flex: 1;
-    min-width: 0;
-}
-
-.student-name {
-    font-family: var(--font-display);
-    font-size: 1rem;
-    font-weight: 600;
-    color: var(--text-primary);
-    line-height: 1.4;
-    margin: 0 0 8px;
-    overflow-wrap: anywhere;
-}
-
-.student-degree {
-    font-size: 0.88rem;
-    color: var(--text-secondary);
-    line-height: 1.5;
-    margin: 0 0 4px;
-}
-
-.student-year {
-    font-size: 0.85rem;
-    color: var(--text-secondary);
-    line-height: 1.5;
-    margin: 0;
-}
-
-/* 右侧头像 */
+/* 顶部头像 */
 .student-avatar {
-    flex: 0 0 68px;
-    width: 68px;
-    height: 68px;
-    border-radius: var(--radius-lg);
+    flex: 0 0 auto;
+    width: 110px;
+    height: 110px;
+    margin: 0 auto 16px;
+    border-radius: 50%;
     overflow: hidden;
-    align-self: center;
 }
 
 .student-avatar img {
@@ -1681,22 +1658,96 @@ a:hover {
     height: 100%;
     object-fit: cover;
     border-radius: inherit;
+    cursor: zoom-in;
+    transition: transform 0.25s ease;
+}
+
+.student-avatar img:hover {
+    transform: scale(1.05);
+}
+
+/* 头像下方的学生信息 */
+.student-info {
+    width: 100%;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* 第一行：姓名 */
+.student-name {
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    line-height: 1.5;
+    margin: 0 0 6px;
+    overflow-wrap: anywhere;
+}
+
+/* 第二行：学位 */
+.student-degree {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin: 0 0 4px;
+    overflow-wrap: anywhere;
+}
+
+/* 第三行：年级 */
+.student-year {
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin: 0 0 6px;
+    overflow-wrap: anywhere;
+}
+
+/* 第四行：邮箱 */
+.student-email {
+    font-size: 0.85rem;
+    color: var(--accent-primary);
+    line-height: 1.5;
+    margin: 0;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
+/* 邮箱链接 */
+.student-email a {
+    color: var(--accent-primary);
+    text-decoration: none;
+}
+
+.student-email a:hover {
+    color: var(--accent-secondary);
+    text-decoration: underline;
 }
 
 /* 平板：两列 */
-@media (min-width: 769px) and (max-width: 1024px) {
+@media (min-width: 600px) and (max-width: 1024px) {
     .students-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
 
 /* 手机：一列 */
-@media (max-width: 768px) {
+@media (max-width: 599px) {
     .students-grid {
         grid-template-columns: 1fr;
+        gap: var(--space-md);
+    }
+
+    .student-card {
+        padding: 20px 16px;
+    }
+
+    .student-avatar {
+        width: 100px;
+        height: 100px;
     }
 }
-
 
 /* ========================================
    Students - Click-to-Enlarge Preview
