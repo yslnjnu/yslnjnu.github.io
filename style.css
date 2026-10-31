@@ -1529,23 +1529,18 @@ a:hover {
 .skip-link { position: absolute; top: -40px; left: 0; background: var(--accent-primary); color: #fff; padding: 8px 16px; z-index: 9999; font-size: 0.875rem; transition: top 0.2s; }
 .skip-link:focus { top: 0; }
 
-/* 个人简介与头像左右布局 */
-.hero-container {
+.hero-content {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
-    justify-content: space-between;
     gap: 40px;
-    width: 100%;
 }
 
-/* 左侧个人简介 */
 .hero-text {
     flex: 1;
     min-width: 0;
 }
 
-/* 右侧头像 */
 .hero-image {
     flex: 0 0 320px;
     width: 320px;
@@ -1563,18 +1558,8 @@ a:hover {
     object-fit: cover;
 }
 
-/* 四个按钮在简介下方 */
-.hero-cta {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 12px;
-    margin-top: 24px;
-}
-
-/* 手机屏幕改为上下排列 */
 @media (max-width: 768px) {
-    .hero-container {
+    .hero-content {
         flex-direction: column;
     }
 
@@ -1585,4 +1570,3 @@ a:hover {
         margin: 24px auto 0;
     }
 }
-
