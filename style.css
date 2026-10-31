@@ -1645,7 +1645,7 @@ a:hover {
 }
 
 .corresponding-star {
-    color: inherit;
+    color: var(--text-secondary);
     font-size: 1em;
     font-weight: inherit;
     vertical-align: baseline;
