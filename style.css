@@ -1651,3 +1651,56 @@ a:hover {
     vertical-align: baseline;
     margin-left: 0px;
 }
+
+/* Students Section */
+.students-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 22px;
+    margin-top: 30px;
+}
+
+.student-card {
+    padding: 28px 32px;
+    border: 1px solid var(--border-color, rgba(255, 255, 255, 0.12));
+    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.035);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    transition: transform 0.25s ease, border-color 0.25s ease,
+                background 0.25s ease;
+}
+
+.student-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent-primary, #6366f1);
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.student-name {
+    margin: 0 0 10px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.student-year {
+    margin: 0;
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+}
+
+/* Mobile layout */
+@media (max-width: 768px) {
+    .students-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .student-card {
+        padding: 22px 24px;
+    }
+}
+
+
+
