@@ -355,9 +355,8 @@ a:hover {
     color: var(--text-secondary);
     line-height: 1.8;
     margin-bottom: var(--space-xl);
-
     text-align: justify;
-    text-justify: inter-word;
+    
 }
 
 .highlight {
