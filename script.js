@@ -108,3 +108,31 @@ function populateLists(cfg) {
     if (html) expGrid.innerHTML = html;
   }
 }
+
+
+function openStudentImage(img) {
+    const modal = document.getElementById('student-image-modal');
+    const largeImage = document.getElementById('student-image-large');
+
+    largeImage.src = img.src;
+    largeImage.alt = img.alt;
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeStudentImage(event) {
+    if (event) {
+        event.stopPropagation();
+    }
+
+    const modal = document.getElementById('student-image-modal');
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+        closeStudentImage();
+    }
+});
+
