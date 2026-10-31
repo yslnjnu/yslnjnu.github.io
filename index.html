@@ -596,22 +596,56 @@
         </div>
     </footer>
 
-
 <!-- Student Image Preview -->
-<div id="student-image-modal"
-     class="student-image-modal"
-     onclick="closeStudentImage()">
-
+<div id="student-image-modal" class="student-image-modal">
     <button type="button"
             class="student-image-close"
-            onclick="closeStudentImage(event)"
             aria-label="Close image">&times;</button>
 
-    <img id="student-image-large"
-         src=""
-         alt="Enlarged student portrait"
-         onclick="event.stopPropagation()">
+    <img id="student-image-large" src="" alt="Student portrait">
 </div>
+
+<script>
+(function () {
+    const modal = document.getElementById('student-image-modal');
+    const largeImage = document.getElementById('student-image-large');
+    const closeButton = modal.querySelector('.student-image-close');
+
+    // 点击学生头像，放大图片
+    document.querySelectorAll('.student-avatar img').forEach(function (img) {
+        img.addEventListener('click', function () {
+            largeImage.src = this.src;
+            largeImage.alt = this.alt;
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+    });
+
+    // 关闭预览
+    function closePreview() {
+        modal.classList.remove('active');
+        largeImage.src = '';
+        document.body.style.overflow = '';
+    }
+
+    // 点击关闭按钮
+    closeButton.addEventListener('click', closePreview);
+
+    // 点击黑色背景关闭，点击图片本身不关闭
+    modal.addEventListener('click', function (event) {
+        if (event.target === modal) {
+            closePreview();
+        }
+    });
+
+    // 按 Esc 键关闭
+    document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape') {
+            closePreview();
+        }
+    });
+})();
+</script>
 
     
     <script src="config.js"></script>
