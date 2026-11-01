@@ -1607,6 +1607,36 @@ a:hover {
    三列布局：放大头像，两行学生信息
    ======================================== */
 
+/* 学生分组 */
+.student-group {
+    margin-top: 28px;
+}
+
+/* 分组标题 */
+.student-group-title {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0 0 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--glass-border);
+}
+
+/* 毕业学生区域，与在读学生拉开距离 */
+.alumni-group {
+    margin-top: 44px;
+}
+
+/* 学生信息分隔竖线 */
+.info-divider {
+    color: var(--text-secondary);
+    opacity: 0.6;
+    margin: 0 2px;
+    font-weight: 400;
+    flex-shrink: 0;
+}
+
 .students-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -1751,6 +1781,8 @@ a:hover {
     font-weight: 400;
     flex-shrink: 0;
 }
+
+
 
 /* 平板：两列 */
 @media (min-width: 600px) and (max-width: 1024px) {
