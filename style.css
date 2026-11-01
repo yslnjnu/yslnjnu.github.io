@@ -1866,3 +1866,8 @@ a:hover {
     line-height: 1;
     cursor: pointer;
 }
+
+/* Education and Employment spacing */
+.exp-category h3 {
+    margin-bottom: 24px;
+}
