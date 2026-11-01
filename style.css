@@ -1743,6 +1743,15 @@ a:hover {
 }
 
 
+/* 学生信息分隔竖线 */
+.info-divider {
+    color: var(--text-secondary);
+    opacity: 0.6;
+    margin: 0 2px;
+    font-weight: 400;
+    flex-shrink: 0;
+}
+
 /* 平板：两列 */
 @media (min-width: 600px) and (max-width: 1024px) {
     .students-grid {
