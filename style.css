@@ -2091,3 +2091,24 @@ a:hover {
         height: 170px;
     }
 }
+/* 强制将学生头像设置为矩形 */
+#students .student-avatar {
+    width: 160px !important;
+    height: 190px !important;
+    border-radius: 10px !important;
+    overflow: hidden !important;
+    margin: 0 auto 20px !important;
+}
+
+#students .student-avatar img {
+    width: 100% !important;
+    height: 100% !important;
+    border-radius: 0 !important;
+    object-fit: cover !important;
+    display: block !important;
+}
+
+/* 如果圆形是由其他选择器设置的，也强制取消 */
+#students .student-card img {
+    border-radius: 0 !important;
+}
