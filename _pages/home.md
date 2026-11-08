@@ -8,12 +8,9 @@ permalink: /
 <p class="home-hero-sub">{{ site.title }}, {{ site.institution }}</p>
 
 <div class="chip-container" markdown="0">
-<a href="{{ '/research' | relative_url }}" class="chip">Quantum Electrodynamics</a>
-<a href="{{ '/research' | relative_url }}" class="chip">Path Integrals</a>
-<a href="{{ '/research' | relative_url }}" class="chip">Superfluidity</a>
-<a href="{{ '/research' | relative_url }}" class="chip">Parton Model</a>
-<a href="{{ '/research' | relative_url }}" class="chip">Quantum Computing</a>
-<a href="{{ '/research' | relative_url }}" class="chip">Nanotechnology</a>
+<a href="{{ '/research' | relative_url }}" class="chip">Super-Resolution Optial Imaing</a>
+<a href="{{ '/research' | relative_url }}" class="chip">Evanescent-Wave Illumination Imaging</a>
+<a href="{{ '/research' | relative_url }}" class="chip">Microsphere Imaging</a>
 </div>
 
 Theoretical physics is a branch of physics that focuses on the development of mathematical models and theories to understand and explain natural phenomena.
