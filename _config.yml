@@ -14,7 +14,7 @@ links:
   google_scholar: "https://scholar.google.com/citations?user=mjJLnu0AAAAJ&hl=zh-CN"
   github: "https://github.com/"
   researchgate: "https://www.researchgate.net/profile/Songlin-Yang-4"
-  orcid: ""
+  orcid: "https://orcid.org/0000-0001-8885-4083"
   twitter: ""
   linkedin: ""
   cv: ""  # e.g., "papers/cv.pdf"
@@ -49,12 +49,12 @@ analytics:
 nav_pages:
   - name: about
   - name: publications
-  - name: talks
+ # - name: talks
   - name: research
-  - name: software
-  - name: team
-  - name: teaching
-  - name: blog
+ # - name: software
+#  - name: team
+ # - name: teaching
+  #- name: blog
 
 # ============================================================
 # STEP 5: Publications (assets/ref.bib)
