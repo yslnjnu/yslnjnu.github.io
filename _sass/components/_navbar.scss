@@ -3,6 +3,12 @@
 // =============================================================
 
 .navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+
   border-bottom: 1px solid var(--border-color);
   padding: var(--space-3) var(--space-4);
   transition: box-shadow var(--transition-base);
@@ -31,6 +37,14 @@
     border-radius: 0;
     opacity: 0.85;
   }
+}
+
+// Navbar content alignment
+.navbar .container {
+  max-width: var(--container-max);
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .nav-link {
