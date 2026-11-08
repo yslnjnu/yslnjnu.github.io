@@ -15,6 +15,6 @@ permalink: /
 </div>
 
 <div class="banner-frame" markdown="0">
-<img src="{{ '/images/banner.webp' | relative_url }}" alt="Feynman diagrams" width="1400" height="449" loading="lazy">
+<img src="{{ '/images/banner.webp' | relative_url }}" alt="Feynman diagrams" width="1800" height="449" loading="lazy">
 <div class="banner-caption">Examples of Feynman diagrams. Feynman R., <em>The theory of positrons. Phys. Rev.</em> (1949)</div>
 </div>
