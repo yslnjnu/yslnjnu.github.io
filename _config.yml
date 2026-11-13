@@ -2,7 +2,7 @@
 # STEP 1: Your Identity (required)
 # ============================================================
 name: "Songlin Yang"
-title: "Lecture"
+title: "Lecturer"
 institution: "Nanjing Normal University"
 email: slyang@njnu.edu.cn
 photo: s.png  # place your photo in images/
@@ -12,7 +12,7 @@ photo: s.png  # place your photo in images/
 # ============================================================
 links:
   google_scholar: "https://scholar.google.com/citations?user=mjJLnu0AAAAJ&hl=zh-CN"
-  github: "https://github.com/"
+  github: "https://github.com/yslnjnu"
   researchgate: "https://www.researchgate.net/profile/Songlin-Yang-4"
   orcid: "https://orcid.org/0000-0001-8885-4083"
   twitter: ""
@@ -48,9 +48,9 @@ analytics:
 # navbar text without changing the URL.
 nav_pages:
   - name: about
-  - name: publications
- # - name: talks
   - name: research
+  - name: publications
+ # - name: talks 
  # - name: software
 #  - name: team
  # - name: teaching
@@ -62,8 +62,8 @@ nav_pages:
 # Your name is bolded in the publication list. Write it exactly as it
 # appears in the rendered list ("Last, F. M."); list the longest form first.
 scholar:
-  last_name: Feynman
-  first_name: ["R. P.", "R."]
+  last_name: Yang
+  first_name: ["Songlin"]
   style: citesty
   locale: en
   source: /assets/

@@ -1,5 +1,6 @@
+
 // =============================================================
-// Navbar — frosted glass, refined
+// Navbar — Steam Dark Blue, White Text
 // =============================================================
 
 .navbar {
@@ -9,60 +10,84 @@
   right: 0;
   width: 100%;
 
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
   padding: var(--space-3) var(--space-4);
   transition: box-shadow var(--transition-base);
   z-index: 1030;
+
+  // Steam dark blue glass effect
   backdrop-filter: saturate(180%) blur(16px);
   -webkit-backdrop-filter: saturate(180%) blur(16px);
-  background-color: rgba(248, 246, 241, 0.8) !important;
+  background-color: rgba(23, 26, 33, 0.96) !important;
 
   &.scrolled {
     box-shadow: var(--shadow-navbar);
   }
 }
 
+// Dark mode — keep Steam background
 [data-bs-theme="dark"] .navbar {
-  background-color: rgba(28, 27, 24, 0.85) !important;
+  background-color: rgba(27, 40, 56, 0.96) !important;
+  border-bottom-color: rgba(255, 255, 255, 0.12);
 }
 
+.navbar .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+// Brand
 .navbar-brand {
   font-family: 'Source Serif 4', Georgia, serif;
   font-weight: 700;
   letter-spacing: -0.01em;
-  color: var(--text-primary) !important;
+  color: #FFFFFF !important;
   font-size: 1.125rem;
 
   img {
     border-radius: 0;
-    opacity: 0.85;
+    opacity: 0.9;
   }
 }
 
-// Navbar content alignment
-.navbar .container {
-  max-width: var(--container-max);
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
+// Navbar menu — right aligned
+@media (min-width: 768px) {
+  .navbar .navbar-collapse {
+    display: flex !important;
+    flex-grow: 1;
+    justify-content: flex-end !important;
+  }
+
+  .navbar .navbar-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    margin-left: auto !important;
+    margin-right: 0 !important;
+  }
 }
 
+// Navigation links
 .nav-link {
-  color: var(--text-secondary) !important;
+  color: #FFFFFF !important;
   font-weight: 500;
-  font-size: 0.85rem;
+  font-size: 1.2rem;
   padding: var(--space-2) var(--space-3) !important;
   border-radius: var(--radius-sm);
-  transition: color var(--transition-fast), background-color var(--transition-fast);
+  transition: color var(--transition-fast),
+              background-color var(--transition-fast);
   letter-spacing: 0.02em;
 
   &:hover {
-    color: var(--accent) !important;
-    background-color: var(--accent-light);
+    color: #66C0F4 !important;
+    background-color: rgba(102, 192, 244, 0.10);
   }
 
   &.active {
-    color: var(--accent) !important;
+    color: #66C0F4 !important;
     position: relative;
 
     &::after {
@@ -72,18 +97,19 @@
       left: var(--space-3);
       right: var(--space-3);
       height: 2px;
-      background-color: var(--accent);
+      background-color: #66C0F4;
       border-radius: 1px;
     }
   }
 }
 
+// Dark mode toggle
 .dark-mode-toggle {
   background: none;
-  border: 1px solid var(--border-color);
+  border: 1px solid #405469;
   border-radius: var(--radius-full);
   padding: var(--space-2);
-  color: var(--text-muted);
+  color: #FFFFFF;
   cursor: pointer;
   font-size: 0.875rem;
   line-height: 1;
@@ -95,30 +121,36 @@
   justify-content: center;
 
   &:hover {
-    color: var(--accent);
-    border-color: var(--accent);
-    background-color: var(--accent-light);
+    color: #66C0F4;
+    border-color: #66C0F4;
+    background-color: rgba(102, 192, 244, 0.10);
   }
 }
 
 // Mobile menu
 .navbar-toggler {
-  border: 1px solid var(--border-color);
+  border: 1px solid #405469;
   padding: var(--space-2) var(--space-3);
   border-radius: var(--radius-sm);
-  color: var(--text-muted);
+  color: #FFFFFF;
   font-size: 1rem;
 
   &:focus {
-    box-shadow: 0 0 0 3px var(--accent-light);
+    box-shadow: 0 0 0 3px rgba(102, 192, 244, 0.18);
+  }
+
+  // White hamburger icon
+  .navbar-toggler-icon {
+    filter: invert(1);
   }
 }
 
 @media (max-width: 767px) {
   .navbar-collapse {
     padding: var(--space-4) 0;
-    border-top: 1px solid var(--border-color);
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
     margin-top: var(--space-3);
+    background-color: #1B2838;
   }
 
   .navbar-nav {
@@ -135,13 +167,13 @@
     }
 
     &.active {
-      background-color: var(--accent-light);
+      background-color: rgba(102, 192, 244, 0.12);
     }
   }
 
   .d-flex.align-items-center {
     padding-top: var(--space-3);
-    border-top: 1px solid var(--border-color);
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
     margin-top: var(--space-3);
   }
 }

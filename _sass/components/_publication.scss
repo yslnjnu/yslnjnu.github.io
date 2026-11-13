@@ -1,145 +1,392 @@
-// =============================================================
-// Publication entry
-// =============================================================
 
-.pub-entry {
-  padding: var(--space-6) 0;
-  border-bottom: 1px solid var(--border-color);
-  position: relative;
+/* ========================================
+   Publications
+   ======================================== */
 
-  &:last-child {
-    border-bottom: none;
-  }
+/* ========================================
+   Page width: align with navbar
+   ======================================== */
 
-  .pub-title {
-    font-weight: 600;
-    color: var(--text-primary);
-  }
-
-  .pub-authors {
-    font-size: 0.9375rem;
-    color: var(--text-secondary);
-  }
-
-  .pub-venue {
-    font-size: 0.875rem;
-    color: var(--text-muted);
-    font-style: italic;
-  }
-
-  .pub-actions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--space-2);
-    margin-top: var(--space-3);
-  }
+body:has(#pubList) main.site-container {
+  width: 100% !important;
+  max-width: var(--container-max) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: var(--container-padding) !important;
+  padding-right: var(--container-padding) !important;
+  box-sizing: border-box;
 }
 
-// Year badge — accent pill floated right
-.year-badge {
-  display: inline-block;
-  float: right;
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.6875rem;
+/* ========================================
+   Publication list
+   ======================================== */
+
+#pubList,
+#pubList .bibliography,
+.publications-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px !important;
+
+  width: 100% !important;
+  max-width: 100% !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  list-style: none !important;
+  box-sizing: border-box;
+}
+
+/* ========================================
+   Remove list numbering and separators
+   ======================================== */
+
+#pubList ol,
+#pubList ul {
+  display: flex;
+  flex-direction: column;
+  gap: 12px !important;
+
+  list-style: none !important;
+  counter-reset: none !important;
+
+  width: 100% !important;
+  max-width: 100% !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  border: none !important;
+  background: none !important;
+  box-sizing: border-box;
+}
+
+#pubList li {
+  display: block;
+
+  list-style: none !important;
+  counter-increment: none !important;
+
+  width: 100% !important;
+  max-width: 100% !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  border: none !important;
+  background: none !important;
+
+  box-sizing: border-box;
+}
+
+/* Remove list markers and separators */
+#pubList li::marker {
+  content: "" !important;
+}
+
+#pubList li::before,
+#pubList li::after,
+#pubList hr {
+  display: none !important;
+  content: none !important;
+}
+
+/* ========================================
+   Individual paper card
+   Match About page .section-card
+   ======================================== */
+
+#pubList .pub-card,
+.pub-card {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+
+  /* Keep original internal layout */
+  gap: 6px !important;
+
+  width: 100% !important;
+  max-width: 100% !important;
+
+  box-sizing: border-box;
+
+  /* Match .section-card */
+  padding: var(--space-8);
+  margin: 0 !important;
+
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-xl);
+
+  box-shadow: var(--shadow-sm);
+
+  transition:
+    box-shadow var(--transition-slow),
+    transform var(--transition-slow);
+}
+
+#pubList .pub-card:hover,
+.pub-card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+}
+
+/* ========================================
+   First row: Title + links
+   ======================================== */
+
+.pub-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 16px;
+
+  width: 100%;
+  min-height: 0;
+
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.pub-title {
+  flex: 1;
+  min-width: 0;
+
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 650;
+
+  color: var(--text-primary);
+  line-height: 1.5;
+
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* ========================================
+   Second row: Authors
+   ======================================== */
+
+.pub-authors {
+  display: block;
+
+  font-size: 1rem;
+  font-weight: 400;
+
+  color: var(--text-secondary);
+  line-height: 1.5;
+
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.pub-authors strong {
+  color: var(--text-primary);
   font-weight: 700;
-  letter-spacing: 0.04em;
-  padding: 0.15rem 0.625rem;
-  border-radius: var(--radius-full);
-  background-color: var(--accent-light);
-  color: var(--accent);
-  border: 1px solid var(--accent);
-  margin-left: var(--space-3);
-  margin-top: var(--space-1);
 }
 
-// Selected publications on the home page: no list numbering
-.selected-pubs ol.bibliography {
-  list-style: none;
-  padding-left: 0;
-  margin-bottom: 0;
+.pub-authors .corresponding-star {
+  display: inline;
+  position: static;
+
+  font-size: 1em;
+  font-weight: inherit;
+
+  vertical-align: baseline;
+  line-height: inherit;
+
+  margin: 0;
+  padding: 0;
+  letter-spacing: 0;
 }
 
-// Collapsible bibtex/abstract
+/* ========================================
+   Third row: Journal information
+   ======================================== */
+
+.pub-venue {
+  display: block;
+
+  font-size: 1rem;
+  font-weight: 400;
+
+  color: var(--text-muted);
+  line-height: 1.5;
+  font-style: normal;
+
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.pub-venue em {
+  font-style: italic;
+}
+
+/* ========================================
+   PDF / HTML / Bib / Abstract buttons
+   ======================================== */
+
+.pub-links {
+  display: flex;
+  flex-wrap: wrap;
+
+  justify-content: flex-end;
+  align-items: center;
+
+  gap: 6px;
+  flex-shrink: 0;
+
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.pub-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+
+  color: #FFFFFF;
+  background-color: transparent;
+
+  padding: 4px 12px;
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-sm);
+
+  text-decoration: none !important;
+  cursor: pointer;
+  white-space: nowrap;
+
+  transition:
+    color var(--transition-fast),
+    background-color var(--transition-fast),
+    border-color var(--transition-fast);
+}
+
+/* Remove underline in every button state */
+.pub-link,
+.pub-link:hover,
+.pub-link:focus,
+.pub-link:active,
+.pub-link:visited {
+  text-decoration: none !important;
+}
+
+/* Same hover effect as navbar */
+.pub-link:hover {
+  color: #66C0F4 !important;
+  background-color: rgba(102, 192, 244, 0.10);
+  border-color: rgba(102, 192, 244, 0.35);
+  transform: none;
+  box-shadow: none;
+}
+
+.pub-link:focus-visible {
+  outline: 2px solid #66C0F4;
+  outline-offset: 2px;
+}
+
+.pub-link:active {
+  transform: none;
+  box-shadow: none;
+}
+
+/* ========================================
+   Abstract and BibTeX
+   ======================================== */
+
 .pub-collapse {
   max-height: 0;
   overflow: hidden;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
   transition: max-height var(--transition-slow);
-
-  &.show {
-    max-height: 1000px;
-    padding-top: var(--space-3);
-  }
-
-  pre {
-    background-color: var(--bg-secondary);
-    border: 1px solid var(--border-color);
-    border-radius: var(--radius-md);
-    padding: var(--space-4);
-    margin: var(--space-3) 0 0;
-    font-size: 0.8125rem;
-    white-space: pre-wrap;
-    word-wrap: break-word;
-    color: var(--text-primary);
-  }
 }
 
-// Copy button inside bibtex blocks
-.copy-wrapper {
-  position: relative;
+.pub-collapse.show {
+  max-height: 1000px;
+  padding-top: 10px !important;
 }
 
-.copy-btn {
-  position: absolute;
-  top: var(--space-4);
-  right: var(--space-2);
-  background: var(--bg-card);
+.pub-collapse p {
+  font-size: 1rem;
+  line-height: 1.7;
+
+  color: var(--text-secondary);
+
+  margin: 0 !important;
+}
+
+.pub-collapse pre {
+  background: var(--bg-secondary);
+
   border: 1px solid var(--border-color);
-  border-radius: var(--radius-sm);
-  color: var(--text-muted);
-  cursor: pointer;
-  padding: var(--space-1) var(--space-2);
-  font-size: 0.8125rem;
-  line-height: 1;
-  transition: all var(--transition-fast);
-  opacity: 0;
-  z-index: 1;
+  border-radius: var(--radius-md);
 
-  .copy-wrapper:hover & {
-    opacity: 1;
-  }
+  padding: var(--space-md);
+  margin: 8px 0 0;
 
-  &:hover {
-    color: var(--accent);
-    border-color: var(--accent);
-  }
+  font-size: 1rem;
 
-  &.copied {
-    color: var(--accent);
-    border-color: var(--accent);
-    opacity: 1;
-  }
-}
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
 
-// Search bar
-.pub-search {
-  width: 100%;
-  padding: var(--space-3) var(--space-4);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-full);
-  background-color: var(--bg-card);
   color: var(--text-primary);
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.875rem;
-  margin-bottom: var(--space-6);
-  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
 
-  &:focus {
-    outline: none;
-    border-color: var(--accent);
-    box-shadow: 0 0 0 3px var(--accent-light);
+/* ========================================
+   Remove default spacing inside paper cards
+   ======================================== */
+
+.pub-card p,
+.pub-card h1,
+.pub-card h2,
+.pub-card h3,
+.pub-card div {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* ========================================
+   Mobile layout
+   ======================================== */
+
+@media (max-width: 768px) {
+
+  body:has(#pubList) main.site-container {
+    padding-left: var(--container-padding) !important;
+    padding-right: var(--container-padding) !important;
   }
 
-  &::placeholder {
-    color: var(--text-muted);
+  .pub-card {
+    padding: var(--space-6);
+    gap: 6px !important;
+  }
+
+  .pub-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .pub-title {
+    font-size: 1rem;
+  }
+
+  .pub-links {
+    justify-content: flex-start;
+  }
+
+  .pub-authors,
+  .pub-venue {
+    font-size: 1rem;
   }
 }

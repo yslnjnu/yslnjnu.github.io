@@ -1,0 +1,219 @@
+---
+layout: default
+---
+
+{% comment %}
+========================================================
+About 页面布局参数：修改这里即可调整页面
+========================================================
+{% endcomment %}
+
+{% assign about_width = "750px" %}
+{% assign sidebar_width = "320px" %}
+{% assign sidebar_gap = "40px" %}
+
+{% comment %}
+右侧卡片位置
+========================================================
+sidebar_top：向下移动
+sidebar_shift_x：向右或向左移动
+========================================================
+{% endcomment %}
+
+{% assign sidebar_top = "40px" %}
+{% assign sidebar_shift_x = "30px" %}
+
+{% comment %}
+左侧简介字体
+========================================================
+about_font_size：字体大小
+about_line_height：行间距
+about_paragraph_gap：段落间距
+========================================================
+{% endcomment %}
+
+{% assign about_font_size = "1.2rem" %}
+{% assign about_line_height = "1.9" %}
+{% assign about_paragraph_gap = "1.2rem" %}
+
+{% comment %}
+右侧卡片高度
+========================================================
+{% endcomment %}
+
+{% assign sidebar_card_min_height = "0px" %}
+
+
+<div class="about-layout">
+
+  <!-- ==========================================
+       左侧简介
+       ========================================== -->
+
+  <div class="about-content">
+    {{ content }}
+  </div>
+
+
+  <!-- ==========================================
+       右侧个人信息卡片
+       ========================================== -->
+
+  <aside class="about-sidebar">
+    {% include sidebar.html %}
+  </aside>
+
+</div>
+
+
+<style>
+
+/* ========================================================
+   1. About 页面整体布局
+   ======================================================== */
+
+.about-layout {
+  display: grid !important;
+
+  grid-template-columns:
+    {{ about_width }} {{ sidebar_width }} !important;
+
+  column-gap: {{ sidebar_gap }} !important;
+
+  justify-content: start !important;
+  align-items: start !important;
+
+  width: 100% !important;
+  max-width: 100% !important;
+
+  box-sizing: border-box !important;
+}
+
+
+/* ========================================================
+   2. 左侧简介宽度与字体
+   ======================================================== */
+
+.about-content {
+  width: {{ about_width }} !important;
+  max-width: {{ about_width }} !important;
+  min-width: 0 !important;
+
+  box-sizing: border-box !important;
+
+  font-size: {{ about_font_size }} !important;
+  line-height: {{ about_line_height }} !important;
+
+  text-align: justify !important;
+
+  overflow-wrap: break-word;
+}
+
+/* 简介段落 */
+
+.about-content p {
+  width: 100% !important;
+
+  font-size: {{ about_font_size }} !important;
+  line-height: {{ about_line_height }} !important;
+
+  text-align: justify !important;
+
+  margin-top: 0;
+  margin-bottom: {{ about_paragraph_gap }};
+}
+
+/* 标题保持左对齐 */
+
+.about-content h1,
+.about-content h2,
+.about-content h3,
+.about-content h4 {
+  text-align: left !important;
+}
+
+
+/* ========================================================
+   3. 右侧卡片区域宽度与位置
+   ======================================================== */
+
+.about-sidebar {
+  width: {{ sidebar_width }} !important;
+  max-width: {{ sidebar_width }} !important;
+  min-width: 0 !important;
+
+  box-sizing: border-box !important;
+
+  /* 上下位置 */
+  margin-top: {{ sidebar_top }} !important;
+
+  /* 左右位置 */
+  transform: translateX({{ sidebar_shift_x }});
+}
+
+
+/* ========================================================
+   4. 个人信息卡片
+   ======================================================== */
+
+.about-sidebar .profile-card {
+  display: block !important;
+
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+
+  min-height: {{ sidebar_card_min_height }} !important;
+
+  box-sizing: border-box !important;
+}
+
+
+/* ========================================================
+   5. News 卡片
+   ======================================================== */
+
+.about-sidebar .section-card {
+  display: block !important;
+
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+
+  box-sizing: border-box !important;
+}
+
+
+/* ========================================================
+   6. 移动端适配
+   ======================================================== */
+
+@media (max-width: 768px) {
+
+  .about-layout {
+    display: grid !important;
+
+    grid-template-columns: minmax(0, 1fr) !important;
+
+    row-gap: 32px !important;
+
+    width: 100% !important;
+  }
+
+  .about-content {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .about-sidebar {
+    width: 100% !important;
+    max-width: 100% !important;
+
+    margin-top: 0 !important;
+
+    transform: none !important;
+  }
+
+}
+
+</style>

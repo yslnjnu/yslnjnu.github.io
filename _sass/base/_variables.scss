@@ -1,29 +1,32 @@
+
 // =============================================================
-// Design Tokens — Editorial Academic
+// Design Tokens — Steam Dark Blue
 // =============================================================
 
 :root {
-  // Accent. Set `accent_color` in _config.yml (it overrides --accent-base);
-  // every other accent variable is derived from it so light and dark mode
-  // both stay readable whatever color is chosen.
-  --accent-base: #1a7a6d;
-  --accent: var(--accent-base);
-  --accent-hover: color-mix(in srgb, var(--accent-base) 82%, black);
-  --accent-light: color-mix(in srgb, var(--accent-base) 8%, transparent);
-  --on-accent: #ffffff;           // text placed on a solid accent background
+  // Accent — Light Blue
+  --accent-base: #66C0F4;
+  --accent: #66C0F4;
+  --accent-hover: #A4D7F5;
+  --accent-light: rgba(102, 192, 244, 0.12);
+  --on-accent: #1B2838;
 
-  // Light mode — warm parchment tones
-  --bg-primary: #f8f6f1;
-  --bg-secondary: #f0ece4;
-  --bg-card: #ffffff;
-  --text-primary: #2c2a25;
-  --text-secondary: #5c5850;
-  --text-muted: #6f6a61;
-  --border-color: #e2ded6;
-  --shadow-sm: 0 1px 3px rgba(44, 42, 37, 0.06);
-  --shadow-md: 0 4px 12px rgba(44, 42, 37, 0.08);
-  --shadow-lg: 0 8px 24px rgba(44, 42, 37, 0.1);
-  --shadow-navbar: 0 1px 4px rgba(44, 42, 37, 0.1);
+  // Steam Dark Blue Backgrounds
+  --bg-primary: #171A21;
+  --bg-secondary: #1B2838;
+  --bg-card: #202A38;
+
+  // White Typography
+  --text-primary: #FFFFFF;
+  --text-secondary: #E2EAF2;
+  --text-muted: #B9C9D8;
+
+  // Borders and Shadows
+  --border-color: #405469;
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.20);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.25);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.30);
+  --shadow-navbar: 0 1px 4px rgba(0, 0, 0, 0.25);
 
   // Layout
   --container-max: 1200px;
@@ -53,23 +56,28 @@
   --transition-slow: 400ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-// Dark mode — rich warm dark
-[data-bs-theme="dark"] {
-  // Lighten the accent so text and pills meet WCAG AA on dark surfaces
-  --accent: color-mix(in srgb, var(--accent-base) 62%, white);
-  --accent-hover: color-mix(in srgb, var(--accent-base) 45%, white);
-  --accent-light: color-mix(in srgb, var(--accent-base) 14%, transparent);
-  --on-accent: #1c1b18;
+// =============================================================
+// Dark Mode — Steam Dark Blue
+// =============================================================
 
-  --bg-primary: #1c1b18;
-  --bg-secondary: #262520;
-  --bg-card: #2a2924;
-  --text-primary: #e8e4dc;
-  --text-secondary: #b5b0a5;
-  --text-muted: #9a958a;
-  --border-color: #3d3a33;
-  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
-  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.35);
-  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.4);
-  --shadow-navbar: 0 1px 4px rgba(0, 0, 0, 0.4);
+[data-bs-theme="dark"] {
+  --accent-base: #66C0F4;
+  --accent: #66C0F4;
+  --accent-hover: #A4D7F5;
+  --accent-light: rgba(102, 192, 244, 0.12);
+  --on-accent: #1B2838;
+
+  --bg-primary: #1B2838;
+  --bg-secondary: #202F40;
+  --bg-card: #2A3B4D;
+
+  --text-primary: #FFFFFF;
+  --text-secondary: #E2EAF2;
+  --text-muted: #B9C9D8;
+
+  --border-color: #405469;
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.20);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.25);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.30);
+  --shadow-navbar: 0 1px 4px rgba(0, 0, 0, 0.25);
 }

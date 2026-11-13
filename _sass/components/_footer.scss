@@ -1,58 +1,71 @@
 // =============================================================
-// Footer — warm, structured
+// Simple Footer — Sticky Footer
 // =============================================================
 
 .site-footer {
-  background-color: var(--bg-secondary);
-  border-top: 1px solid var(--border-color);
-  padding: var(--space-12) 0 var(--space-8);
-  margin-top: var(--space-16);
-  position: relative;
+  display: block !important;
+  position: relative !important;
+  z-index: 1;
 
-  .footer-heading {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.6875rem;
-    &::after { display: none; }
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-    color: var(--text-muted);
-    margin-bottom: var(--space-4);
-    margin-top: 0;
+  width: 100%;
+  box-sizing: border-box;
+
+  background: #171A21 !important;
+  background-color: #171A21 !important;
+
+  border: none !important;
+  box-shadow: none !important;
+
+  padding: 20px 0;
+
+  // 页脚自动下沉
+  margin-top: auto !important;
+
+  text-align: center;
+
+  &::before,
+  &::after {
+    display: none !important;
+    content: none !important;
   }
+}
 
-  p, a {
-    font-size: 0.8125rem;
-    color: var(--text-secondary);
-    line-height: 1.9;
-  }
+.site-footer .footer-copyright {
+  margin: 0;
+  padding: 0;
+  border: none;
 
-  a:hover {
-    color: var(--accent);
-  }
+  color: #B9C9D8;
+  font-size: 0.75rem;
+  line-height: 1.6;
+  letter-spacing: 0.03em;
+  text-align: center;
+  text-transform: none;
+}
 
-  .footer-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--space-8);
-    max-width: var(--container-max);
-    margin: 0 auto;
-    padding: 0 var(--container-padding);
+// =============================================================
+// Sticky Footer Layout
+// =============================================================
 
-    @media (max-width: 640px) {
-      grid-template-columns: 1fr;
-      gap: var(--space-6);
-    }
-  }
+.page-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  box-sizing: border-box;
+}
 
-  .footer-copyright {
-    text-align: center;
-    margin-top: var(--space-8);
-    padding-top: var(--space-6);
-    border-top: 1px solid var(--border-color);
-    color: var(--text-muted);
-    font-size: 0.6875rem;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-  }
+.page-wrapper > header {
+  flex-shrink: 0;
+}
+
+.page-wrapper > main {
+  flex: 1 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.page-wrapper > .site-footer {
+  flex-shrink: 0;
+  margin-top: auto !important;
 }

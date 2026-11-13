@@ -3,17 +3,36 @@
 
   {% include head.html %}
 
-  <body data-baseurl="{{ site.baseurl }}">
+  <body data-baseurl="{{ site.baseurl }}"
+        class="{% if page.url == '/' %}is-homepage{% endif %}">
+
     <a class="skip-link" href="#main">Skip to content</a>
+
     {% include icons.svg %}
 
-    {% include header.html %}
+    {% if page.url == '/' %}
 
-    <main id="main" class="site-container">
-      {{ content }}
-    </main>
+      <!-- Homepage: preserve fullscreen layout -->
+      <main id="main" class="site-container home-page-container">
+        {{ content }}
+      </main>
 
-    {% include footer.html %}
+    {% else %}
+
+      <!-- Other pages: sticky footer layout -->
+      <div class="page-wrapper">
+
+        {% include header.html %}
+
+        <main id="main" class="site-container">
+          {{ content }}
+        </main>
+
+        {% include footer.html %}
+
+      </div>
+
+    {% endif %}
 
   </body>
 
