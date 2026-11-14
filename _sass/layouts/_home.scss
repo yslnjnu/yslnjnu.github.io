@@ -1,35 +1,51 @@
 
 /* =========================================================
    Fullscreen Academic Homepage
+   Font: Inter + Noto Sans SC
    ========================================================= */
 
+
 /* ---------------------------------------------------------
-   1. Homepage base layout
+   1. Homepage typography
    --------------------------------------------------------- */
 
 body.is-homepage {
+  font-family: "Inter", "Noto Sans SC",
+               -apple-system, BlinkMacSystemFont,
+               "Segoe UI", sans-serif;
+
   margin: 0 !important;
   padding: 0 !important;
+
   overflow: hidden;
   background: #10131b;
 }
 
-/* Remove theme container restrictions */
+
+/* ---------------------------------------------------------
+   2. Homepage base layout
+   --------------------------------------------------------- */
+
 body.is-homepage main#main.site-container.home-page-container {
   display: block !important;
+
   width: 100% !important;
   max-width: none !important;
   min-height: 100vh;
+
   margin: 0 !important;
   padding: 0 !important;
+
   border: 0 !important;
   border-radius: 0 !important;
   box-shadow: none !important;
+
   overflow: visible !important;
 }
 
+
 /* ---------------------------------------------------------
-   2. Fullscreen background container
+   3. Fullscreen background container
    --------------------------------------------------------- */
 
 .home-fullscreen {
@@ -37,6 +53,7 @@ body.is-homepage main#main.site-container.home-page-container {
   isolation: isolate;
 
   display: block;
+
   width: 100%;
   height: 100vh;
   height: 100svh;
@@ -46,6 +63,7 @@ body.is-homepage main#main.site-container.home-page-container {
   padding: 0;
 
   overflow: hidden;
+
   background: #10131b;
 
   border: 0 !important;
@@ -53,8 +71,9 @@ body.is-homepage main#main.site-container.home-page-container {
   box-shadow: none !important;
 }
 
+
 /* ---------------------------------------------------------
-   3. Background image
+   4. Background image
    --------------------------------------------------------- */
 
 .home-background {
@@ -63,6 +82,7 @@ body.is-homepage main#main.site-container.home-page-container {
   z-index: 0;
 
   display: block;
+
   width: 100%;
   height: 100%;
 
@@ -77,8 +97,9 @@ body.is-homepage main#main.site-container.home-page-container {
   box-shadow: none !important;
 }
 
+
 /* ---------------------------------------------------------
-   4. Dark overlay
+   5. Dark overlay
    --------------------------------------------------------- */
 
 .home-dark-overlay {
@@ -92,22 +113,28 @@ body.is-homepage main#main.site-container.home-page-container {
   border-radius: 0 !important;
 }
 
+
 /* ---------------------------------------------------------
-   5. Top-left name
+   6. Top-left name
    --------------------------------------------------------- */
 
 .home-brand {
   position: absolute;
+
   top: 24px;
   left: 32px;
   z-index: 3;
 
-  color: #fff;
+  color: #ffffff;
+
+  font-family: "Inter", sans-serif;
   font-size: 24px;
   font-weight: 700;
-  letter-spacing: 0.01em;
+
+  letter-spacing: -0.5px;
 
   text-decoration: none !important;
+
   border: none !important;
   box-shadow: none !important;
 
@@ -118,12 +145,14 @@ body.is-homepage main#main.site-container.home-page-container {
   }
 }
 
+
 /* ---------------------------------------------------------
-   6. Center introduction
+   7. Center introduction
    --------------------------------------------------------- */
 
 .home-intro {
   position: absolute;
+
   top: 50%;
   left: 50%;
   z-index: 2;
@@ -131,19 +160,25 @@ body.is-homepage main#main.site-container.home-page-container {
   width: 90%;
 
   transform: translate(-50%, -50%);
+
   text-align: center !important;
+
+
+  /* Main heading */
 
   h1 {
     width: 100%;
+
     margin: 0 auto;
 
-    color: #fff;
+    color: #ffffff;
 
-    font-family: "Noto Serif SC", "Songti SC", serif;
+    font-family: "Inter", "Noto Sans SC", sans-serif;
+
     font-size: clamp(36px, 5vw, 66px);
     font-weight: 600;
 
-    letter-spacing: 0.12em;
+    letter-spacing: 0.02em;
     line-height: 1.5;
 
     text-align: center !important;
@@ -151,91 +186,278 @@ body.is-homepage main#main.site-container.home-page-container {
     text-shadow: 0 3px 18px rgba(0, 0, 0, 0.35);
   }
 
+
+  /* English subtitle */
+
   .home-intro-en {
     display: block;
     position: static;
 
     width: 100%;
+
     margin: 16px auto 36px !important;
     padding: 0;
 
     color: rgba(255, 255, 255, 0.85);
 
+    font-family: "Inter", sans-serif;
+
     font-size: clamp(15px, 1.5vw, 21px);
     font-weight: 400;
-    letter-spacing: 0.08em;
+
+    letter-spacing: 0.03em;
 
     text-align: center !important;
+
     transform: none !important;
   }
 }
 
+
 /* ---------------------------------------------------------
-   7. Learn More button
+   8. Homepage action buttons
    --------------------------------------------------------- */
 
-.home-learn-more {
-  display: inline-flex;
+.home-actions {
+  display: flex;
+
+  justify-content: center;
   align-items: center;
+
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+
+/* Common button style */
+
+.home-button {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
   gap: 12px;
 
-  padding: 13px 28px;
+  min-width: 155px;
+  min-height: 48px;
 
-  color: #fff;
-  font-size: 15px;
-  letter-spacing: 0.04em;
+  padding: 0 25px;
 
-  text-decoration: none;
+  color: #ffffff !important;
+
+  font-family: "Inter", "Noto Sans SC", sans-serif;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  letter-spacing: 0.02em;
+
+  text-decoration: none !important;
 
   border: 1px solid rgba(255, 255, 255, 0.7);
-  border-radius: 4px;
+  border-radius: 6px;
 
-  background: rgba(255, 255, 255, 0.08);
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
 
-  transition: all 0.3s ease;
+  /* SVG arrow */
 
-  &:hover {
-    color: #fff;
-    background: rgba(255, 255, 255, 0.2);
-    border-color: #fff;
+  .button-arrow {
+    display: block !important;
 
-    transform: translateY(-3px);
-    text-decoration: none;
-  }
+    width: 16px;
+    height: 16px;
 
-  span {
-    font-size: 13px;
-    opacity: 0.85;
+    flex-shrink: 0;
+
+    fill: none;
+
+    stroke: currentColor;
+    stroke-width: 1.8;
+
+    stroke-linecap: round;
+    stroke-linejoin: round;
+
+    transition: transform 0.3s ease;
   }
 }
 
-/* ---------------------------------------------------------
-   8. Remove unwanted decorative lines
-   --------------------------------------------------------- */
 
-.home-fullscreen::before,
-.home-fullscreen::after,
-.home-fullscreen .home-brand::before,
-.home-fullscreen .home-brand::after,
-.home-fullscreen .home-intro::before,
-.home-fullscreen .home-intro::after,
-.home-fullscreen h1::before,
-.home-fullscreen h1::after,
-.home-fullscreen p::before,
-.home-fullscreen p::after,
-.home-fullscreen a::before,
-.home-fullscreen a::after {
+/* Primary button */
+
+.home-button-primary {
+  color: #171A21 !important;
+
+  background: #ffffff;
+
+  border-color: #ffffff;
+}
+
+
+.home-button-primary:hover {
+  color: #171A21 !important;
+
+  background: #e9edf2;
+
+  border-color: #e9edf2;
+
+  transform: translateY(-3px);
+
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+
+.home-button-primary:hover .button-arrow {
+  transform: translate(3px, -3px);
+}
+
+
+/* Secondary glass button */
+
+.home-button-outline {
+  color: #ffffff !important;
+
+  background: rgba(255, 255, 255, 0.08);
+
+  border-color: rgba(255, 255, 255, 0.65);
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+
+.home-button-outline:hover {
+  color: #ffffff !important;
+
+  background: rgba(255, 255, 255, 0.2);
+
+  border-color: #ffffff;
+
+  transform: translateY(-3px);
+
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+}
+
+
+.home-button-outline:hover .button-arrow {
+  transform: translateX(4px);
+}
+
+
+/* Remove theme link decorations */
+
+.home-button::before,
+.home-button::after {
   display: none !important;
   content: none !important;
 }
 
 
+/* ---------------------------------------------------------
+   9. Location
+   --------------------------------------------------------- */
+
+.home-location {
+  position: absolute;
+
+  left: 5%;
+  bottom: 30px;
+
+  z-index: 999;
+
+  display: flex;
+
+  align-items: center;
+  gap: 9px;
+
+  color: rgba(255, 255, 255, 0.95);
+
+  font-size: 14px;
+  font-weight: 400;
+
+  letter-spacing: 1px;
+
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+
+  pointer-events: none;
+}
+
 
 /* ---------------------------------------------------------
-   10. Mobile responsive
+   10. Remove unwanted decorative lines
+   --------------------------------------------------------- */
+
+.home-fullscreen::before,
+.home-fullscreen::after,
+
+.home-fullscreen .home-brand::before,
+.home-fullscreen .home-brand::after,
+
+.home-fullscreen .home-intro::before,
+.home-fullscreen .home-intro::after,
+
+.home-fullscreen h1::before,
+.home-fullscreen h1::after,
+
+.home-fullscreen p::before,
+.home-fullscreen p::after {
+
+  display: none !important;
+  content: none !important;
+}
+
+
+/* ---------------------------------------------------------
+   11. Remove possible card styles
+   --------------------------------------------------------- */
+
+body.is-homepage #main,
+body.is-homepage #main > *,
+body.is-homepage .site-container,
+body.is-homepage .home-page-container,
+body.is-homepage .home-fullscreen {
+
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+
+/* Remove card background and padding */
+
+body.is-homepage #main {
+  background: transparent !important;
+  padding: 0 !important;
+}
+
+
+/* ---------------------------------------------------------
+   12. Fullscreen homepage
+   --------------------------------------------------------- */
+
+body.is-homepage .home-fullscreen {
+
+  position: fixed !important;
+
+  inset: 0;
+
+  width: 100vw !important;
+  height: 100vh !important;
+  height: 100svh !important;
+
+  margin: 0 !important;
+
+  overflow: hidden !important;
+}
+
+
+/* ---------------------------------------------------------
+   13. Mobile responsive
    --------------------------------------------------------- */
 
 @media (max-width: 768px) {
@@ -243,52 +465,55 @@ body.is-homepage main#main.site-container.home-page-container {
   .home-brand {
     top: 18px;
     left: 20px;
+
     font-size: 19px;
   }
 
+
   .home-intro {
+
     width: 92%;
 
     h1 {
       font-size: 34px;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.02em;
     }
+
 
     .home-intro-en {
       margin: 14px auto 28px !important;
+
       font-size: 14px;
     }
   }
 
-  .home-learn-more {
-    padding: 11px 22px;
-    font-size: 14px;
+
+  .home-actions {
+    gap: 12px;
   }
-}
 
-/* Remove possible card styles from homepage */
 
-body.is-homepage #main,
-body.is-homepage #main > *,
-body.is-homepage .site-container,
-body.is-homepage .home-page-container,
-body.is-homepage .home-fullscreen {
-  border-radius: 0 !important;
-  box-shadow: none !important;
-}
+  .home-button {
+    min-width: 135px;
+    min-height: 44px;
 
-/* Remove card background and padding */
-body.is-homepage #main {
-  background: transparent !important;
-  padding: 0 !important;
-}
+    padding: 0 17px;
 
-/* Fullscreen homepage */
-body.is-homepage .home-fullscreen {
-  position: fixed !important;
-  inset: 0 !important;
-  width: 100vw !important;
-  height: 100vh !important;
-  margin: 0 !important;
-  overflow: hidden !important;
+    font-size: 13px;
+  }
+
+
+  .home-button .button-arrow {
+    width: 15px;
+    height: 15px;
+  }
+
+
+  .home-location {
+    left: 20px;
+    bottom: 20px;
+
+    font-size: 12px;
+  }
+
 }

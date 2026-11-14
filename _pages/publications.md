@@ -6,6 +6,7 @@ permalink: /publications/
 
 # Publications
 
+First / Corresponding Author, * indicates the corresponding author.
 
 <div id="pubList">
 
