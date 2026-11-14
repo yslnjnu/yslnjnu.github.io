@@ -35,7 +35,7 @@ permalink: /team/
 </div>
 
 {% if site.data.team_members.size > 0 %}
-## Current Students and Postdocs
+## Current Students
 
 <div class="team-grid">
 {% for member in site.data.team_members %}
@@ -75,6 +75,3 @@ permalink: /team/
 </div>
 {% endif %}
 
-## Administrative Support
-
-<a href="mailto:exampleemail@gmail.com">Example staff</a> is helping us (and other groups) with administration.
